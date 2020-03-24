@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="schoolc2c-admin-service" />
+        <module name="schoolc2c-admin-web" />
+        <module name="schoolc2c-api" />
+        <module name="schoolc2c-common-util" />
+        <module name="schoolc2c-passport-web" />
+        <module name="schoolc2c-service-util" />
+        <module name="schoolc2c-trade-service" />
+        <module name="schoolc2c-trade-web" />
+        <module name="schoolc2c-user-service" />
+        <module name="schoolc2c-user-web" />
+        <module name="schoolc2c-web-util" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="school-user-web" target="1.8" />
+      <module name="schoolc2c-admin-service" target="1.8" />
+      <module name="schoolc2c-admin-web" target="1.8" />
+      <module name="schoolc2c-api" target="1.5" />
+      <module name="schoolc2c-common-util" target="1.8" />
+      <module name="schoolc2c-parent" target="1.8" />
+      <module name="schoolc2c-passport-web" target="1.8" />
+      <module name="schoolc2c-service-util" target="1.8" />
+      <module name="schoolc2c-trade-service" target="1.8" />
+      <module name="schoolc2c-trade-web" target="1.8" />
+      <module name="schoolc2c-user-service" target="1.8" />
+      <module name="schoolc2c-user-web" target="1.8" />
+      <module name="schoolc2c-web-util" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="school-user-web" options="" />
+      <module name="schoolc2c-admin-service" options="" />
+      <module name="schoolc2c-admin-web" options="" />
+      <module name="schoolc2c-passport-web" options="" />
+      <module name="schoolc2c-trade-service" options="" />
+      <module name="schoolc2c-trade-web" options="" />
+      <module name="schoolc2c-user-service" options="" />
+      <module name="schoolc2c-user-web" options="" />
+    </option>
+  </component>
+</project>

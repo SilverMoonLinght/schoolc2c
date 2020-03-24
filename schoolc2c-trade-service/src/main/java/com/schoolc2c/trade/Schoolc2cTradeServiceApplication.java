@@ -1,0 +1,15 @@
+package com.schoolc2c.trade;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import tk.mybatis.spring.annotation.MapperScan;
+
+@SpringBootApplication
+@MapperScan(basePackages = "com.schoolc2c.trade.mapper")
+public class Schoolc2cTradeServiceApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(Schoolc2cTradeServiceApplication.class, args);
+    }
+
+}

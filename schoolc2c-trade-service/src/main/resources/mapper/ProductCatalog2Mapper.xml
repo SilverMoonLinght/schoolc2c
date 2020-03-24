@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.schoolc2c.trade.mapper.ProductCatalog2Mapper">
+    <select id="selectCatalog2ByPid" resultType="com.schoolc2c.bean.ProductCatalog2" parameterType="String">
+        select * from product_catalog2 where catalog1_id = #{catalog1Id}
+    </select>
+</mapper>

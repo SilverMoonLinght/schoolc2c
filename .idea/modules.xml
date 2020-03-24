@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/schoolc2c.iml" filepath="$PROJECT_DIR$/schoolc2c.iml" />
+      <module fileurl="file://$PROJECT_DIR$/schoolc2c-admin-service/schoolc2c-admin-service.iml" filepath="$PROJECT_DIR$/schoolc2c-admin-service/schoolc2c-admin-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/schoolc2c-admin-web/schoolc2c-admin-web.iml" filepath="$PROJECT_DIR$/schoolc2c-admin-web/schoolc2c-admin-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/schoolc2c-api/schoolc2c-api.iml" filepath="$PROJECT_DIR$/schoolc2c-api/schoolc2c-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/schoolc2c-common-util/schoolc2c-common-util.iml" filepath="$PROJECT_DIR$/schoolc2c-common-util/schoolc2c-common-util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/schoolc2c-parent/schoolc2c-parent.iml" filepath="$PROJECT_DIR$/schoolc2c-parent/schoolc2c-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/schoolc2c-passport-web/schoolc2c-passport-web.iml" filepath="$PROJECT_DIR$/schoolc2c-passport-web/schoolc2c-passport-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/schoolc2c-service-util/schoolc2c-service-util.iml" filepath="$PROJECT_DIR$/schoolc2c-service-util/schoolc2c-service-util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/schoolc2c-trade-service/schoolc2c-trade-service.iml" filepath="$PROJECT_DIR$/schoolc2c-trade-service/schoolc2c-trade-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/schoolc2c-trade-web/schoolc2c-trade-web.iml" filepath="$PROJECT_DIR$/schoolc2c-trade-web/schoolc2c-trade-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/schoolc2c-user-service/schoolc2c-user-service.iml" filepath="$PROJECT_DIR$/schoolc2c-user-service/schoolc2c-user-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/schoolc2c-user-web/schoolc2c-user-web.iml" filepath="$PROJECT_DIR$/schoolc2c-user-web/schoolc2c-user-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/schoolc2c-web-util/schoolc2c-web-util.iml" filepath="$PROJECT_DIR$/schoolc2c-web-util/schoolc2c-web-util.iml" />
+    </modules>
+  </component>
+</project>

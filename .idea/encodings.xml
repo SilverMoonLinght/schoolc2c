@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" addBOMForNewFiles="with NO BOM">
+    <file url="file://$PROJECT_DIR$/school-user-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/schoolc2c-admin-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/schoolc2c-admin-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/schoolc2c-common-util" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/schoolc2c-parent" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/schoolc2c-passport-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/schoolc2c-service-util" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/schoolc2c-trade-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/schoolc2c-trade-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/schoolc2c-user-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/schoolc2c-user-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/schoolc2c-web-util" charset="UTF-8" />
+  </component>
+</project>

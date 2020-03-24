@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.schoolc2c.admin.mapper.UserMapper">
+    <select id="selectAllUser" resultType="com.schoolc2c.bean.User">
+    select t.* from user t
+  </select>
+    <select id="selectUser" resultType="com.schoolc2c.bean.User" parameterType="String">
+        select * from user where username = #{username}
+    </select>
+    <select id="selectPageUser" resultType="com.schoolc2c.bean.User" parameterType="int">
+        select * from user limit #{startNum},#{pageSize}
+    </select>
+</mapper>

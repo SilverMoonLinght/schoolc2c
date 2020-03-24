@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.schoolc2c.trade.mapper.ProductInfoMapper">
+    <select id="selectPageProductInfo" resultType="com.schoolc2c.bean.ProductInfo" parameterType="int">
+        select * from product_info limit #{startNum},#{pageSize}
+    </select>
+
+    <select id="selectPartPageProductInfo" resultType="com.schoolc2c.bean.ProductInfo">
+        select * from product_info where catalog3_id = #{catalog3Id} limit #{startNum},#{pageSize}
+    </select>
+</mapper>
