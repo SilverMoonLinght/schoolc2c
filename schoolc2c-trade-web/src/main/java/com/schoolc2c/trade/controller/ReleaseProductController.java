@@ -2,14 +2,18 @@ package com.schoolc2c.trade.controller;
 
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.schoolc2c.annotations.LoginRequired;
 import com.schoolc2c.bean.ProductInfo;
 import com.schoolc2c.service.ReleaseProductService;
+import com.schoolc2c.util.JwtUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
+import java.util.Map;
 import java.util.UUID;
 
 @Controller
@@ -44,7 +48,14 @@ public class ReleaseProductController {
 
     @RequestMapping("releaseProduct")
     @ResponseBody
-    public int ReleaseProduct(@RequestBody ProductInfo productInfo){
+    @LoginRequired
+    public int ReleaseProduct(HttpServletRequest request,@RequestBody ProductInfo productInfo){
+
+        String token = request.getHeader("token");
+
+        Map<String,Object> map = JwtUtil.decode(token,"2016051146");
+        String id = map.get("id").toString();
+        productInfo.setUserId(id);
 
         int status = releaseProductService.addProductInfo(productInfo);
 

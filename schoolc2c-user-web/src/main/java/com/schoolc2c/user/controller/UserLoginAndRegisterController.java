@@ -38,10 +38,9 @@ public class UserLoginAndRegisterController {
 
         if (user1 != null){
             String id = user1.getId();
-            System.out.println("user,getId"+id);
+
             Map<String,Object> map = new HashMap<>();
             map.put("id",id);
-            System.out.println("map.get"+map.get("id"));
 
             token = JwtUtil.encode("2016051146",map);
 
@@ -74,7 +73,6 @@ public class UserLoginAndRegisterController {
         Map<String,Object> map = JwtUtil.decode(token,"2016051146");
 
         Object id = map.get("id");
-        System.out.println("map.get"+id);
 
         User user = userLoginAndRegisterService.getUserByToken(id.toString());
 

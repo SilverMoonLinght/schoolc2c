@@ -32,18 +32,14 @@ public class PassportController {
 
     @RequestMapping("verifyToken")
     @ResponseBody
-    public String verifyToken(String token, HttpServletRequest request){
-
-        String token1=request.getParameter("token");
+    public String verifyToken(String token){
 
 
-
-        Map<String,Object> map = JwtUtil.decode(token1,"2016051146");
+        Map<String,Object> map = JwtUtil.decode(token,"2016051146");
 
         Object id = map.get("id");
 
-
-        String verify = userLoginAndRegisterService.verifyToken(token1,id.toString());
+        String verify = userLoginAndRegisterService.verifyToken(token,id.toString());
 
         return verify;
     }

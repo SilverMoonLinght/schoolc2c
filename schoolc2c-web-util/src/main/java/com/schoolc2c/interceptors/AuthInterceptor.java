@@ -27,6 +27,9 @@ public boolean preHandle(HttpServletRequest request, HttpServletResponse respons
     response.setHeader("Access-Control-Allow-Headers", " Origin, X-Requested-With, content-Type, Accept, Authorization,token");
     response.setHeader("Access-Control-Max-Age","3600");
 
+    request.setCharacterEncoding("UTF-8");
+    response.setCharacterEncoding("UTF-8");
+
     String token = request.getHeader("token");
 
     if (!(handler instanceof HandlerMethod)){
