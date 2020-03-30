@@ -1,9 +1,6 @@
 package com.schoolc2c.bean;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 public class ProductWanted implements Serializable {
@@ -37,6 +34,12 @@ public class ProductWanted implements Serializable {
 
     @Column
     private String imgUrl;
+
+    @Transient
+    private String username;
+
+    @Transient
+    private String icon;
 
     public String getId() {
         return id;
@@ -108,5 +111,21 @@ public class ProductWanted implements Serializable {
 
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
     }
 }

@@ -8,6 +8,15 @@ public class Pages implements Serializable {
     private int pageNum;
     private List<User> userList;
     private List<ProductInfo> productInfoList;
+    private List<ProductWanted> productWanteds;
+
+    public List<ProductWanted> getProductWanteds() {
+        return productWanteds;
+    }
+
+    public void setProductWanteds(List<ProductWanted> productWanteds) {
+        this.productWanteds = productWanteds;
+    }
 
     public List<ProductInfo> getProductInfoList() {
         return productInfoList;
