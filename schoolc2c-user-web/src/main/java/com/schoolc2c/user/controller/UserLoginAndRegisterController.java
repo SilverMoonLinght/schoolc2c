@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -68,7 +69,9 @@ public class UserLoginAndRegisterController {
     @RequestMapping("getUserByToken")
     @ResponseBody
     @LoginRequired
-    public User getUserByToken(@RequestBody String token){
+    public User getUserByToken(HttpServletRequest request){
+
+        String token = request.getHeader("token");
 
         Map<String,Object> map = JwtUtil.decode(token,"2016051146");
 

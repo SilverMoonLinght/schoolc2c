@@ -3,7 +3,7 @@ package com.schoolc2c.user.service.Impl;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.schoolc2c.bean.User;
 import com.schoolc2c.service.UserLoginAndRegisterService;
-import com.schoolc2c.user.mapper.UserLoginAndRegisterMapper;
+import com.schoolc2c.user.mapper.UserMapper;
 import com.schoolc2c.util.RedisUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
@@ -17,7 +17,7 @@ import java.util.List;
 public class UserLoginAndRegisterServiceImpl implements UserLoginAndRegisterService {
 
     @Autowired
-    UserLoginAndRegisterMapper userLoginAndRegisterMapper;
+    UserMapper userMapper;
 
     @Autowired
     RedisUtil redisUtil;
@@ -26,7 +26,7 @@ public class UserLoginAndRegisterServiceImpl implements UserLoginAndRegisterServ
     @Override
     public User userLogin(User user) {
 
-        User users = userLoginAndRegisterMapper.selectOne(user);
+        User users = userMapper.selectOne(user);
 
         return users;
     }
@@ -67,12 +67,12 @@ public class UserLoginAndRegisterServiceImpl implements UserLoginAndRegisterServ
         User user1 = new User();
         user1.setUsername(user.getUsername());
 
-        User user2 = userLoginAndRegisterMapper.selectOne(user1);
+        User user2 = userMapper.selectOne(user1);
 
         if (user2 == null){
             user.setGender("0");
             user.setStatus("1");
-            flag = userLoginAndRegisterMapper.insert(user);
+            flag = userMapper.insert(user);
         }
 
         if (flag>0){
@@ -83,7 +83,7 @@ public class UserLoginAndRegisterServiceImpl implements UserLoginAndRegisterServ
 
     @Override
     public User getUserByToken(String toString) {
-        return userLoginAndRegisterMapper.selectByPrimaryKey(toString);
+        return userMapper.selectByPrimaryKey(toString);
     }
 
 }
