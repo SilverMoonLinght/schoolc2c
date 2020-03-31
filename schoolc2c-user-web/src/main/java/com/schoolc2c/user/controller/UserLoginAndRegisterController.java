@@ -7,7 +7,6 @@ import com.schoolc2c.annotations.PassToken;
 import com.schoolc2c.bean.User;
 import com.schoolc2c.service.UserLoginAndRegisterService;
 import com.schoolc2c.util.JwtUtil;
-import io.jsonwebtoken.Claims;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -80,6 +78,37 @@ public class UserLoginAndRegisterController {
         User user = userLoginAndRegisterService.getUserByToken(id.toString());
 
         return user;
+    }
+
+
+    @RequestMapping("editUserInfo")
+    @ResponseBody
+    @LoginRequired
+    public String editUserInfo(HttpServletRequest request, @RequestBody User user){
+
+        String token = request.getHeader("token");
+        Map<String,Object> map = JwtUtil.decode(token,"2016051146");
+        String id = map.get("id").toString();
+        user.setId(id);
+
+        String status = userLoginAndRegisterService.updateUserInfo(user);
+
+        return status;
+    }
+
+
+    @RequestMapping("updatePass")
+    @ResponseBody
+    @LoginRequired
+    public String updatePass(HttpServletRequest request,String oldPass,String newPass){
+
+        String token = request.getHeader("token");
+        Map<String,Object> map = JwtUtil.decode(token,"2016051146");
+        String id = map.get("id").toString();
+
+        String status = userLoginAndRegisterService.updatePass(id,oldPass,newPass);
+
+        return status;
     }
 
 

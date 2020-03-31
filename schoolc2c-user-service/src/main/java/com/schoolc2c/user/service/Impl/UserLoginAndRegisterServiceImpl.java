@@ -6,11 +6,10 @@ import com.schoolc2c.service.UserLoginAndRegisterService;
 import com.schoolc2c.user.mapper.UserMapper;
 import com.schoolc2c.util.RedisUtil;
 import org.apache.commons.lang3.StringUtils;
-import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import redis.clients.jedis.Jedis;
 
-import java.util.List;
+
 
 
 @Service
@@ -84,6 +83,34 @@ public class UserLoginAndRegisterServiceImpl implements UserLoginAndRegisterServ
     @Override
     public User getUserByToken(String toString) {
         return userMapper.selectByPrimaryKey(toString);
+    }
+
+    @Override
+    public String updateUserInfo(User user) {
+
+        int status = userMapper.updateByPrimaryKey(user);
+        if (status > 0){
+            return "success";
+        }
+        return "fail";
+    }
+
+    @Override
+    public String updatePass(String id, String oldPass, String newPass) {
+
+        User user = userMapper.selectByPrimaryKey(id);
+
+        int flag = 0;
+        if (!user.getPassword().equals(oldPass)){
+            return "fail";
+        }
+        user.setPassword(newPass);
+        flag = userMapper.updateByPrimaryKey(user);
+        if (flag>0){
+            return "success";
+        }
+
+        return "error";
     }
 
 }

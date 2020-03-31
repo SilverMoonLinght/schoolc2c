@@ -14,4 +14,8 @@ public interface UserLoginAndRegisterService {
     String userRegister(User user);
 
     User getUserByToken(String toString);
+
+    String updateUserInfo(User user);
+
+    String updatePass(String id, String oldPass, String newPass);
 }

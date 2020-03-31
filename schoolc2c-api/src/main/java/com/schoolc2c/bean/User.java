@@ -8,8 +8,9 @@ import java.util.Date;
 
 public class User implements Serializable {
 
-    @Id
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private String id;
     private String username;
     private String password;
