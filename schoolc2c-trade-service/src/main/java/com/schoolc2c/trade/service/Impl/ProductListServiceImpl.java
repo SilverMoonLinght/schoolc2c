@@ -35,4 +35,14 @@ public class ProductListServiceImpl implements ProductListService {
         pages.setPageNum(pageNum);
         return pages;
     }
+
+    @Override
+    public List<ProductInfo> getProductListByUser(String id) {
+
+        ProductInfo productInfo = new ProductInfo();
+        productInfo.setUserId(id);
+
+        List<ProductInfo> productInfoList = productInfoMapper.select(productInfo);
+        return productInfoList;
+    }
 }
