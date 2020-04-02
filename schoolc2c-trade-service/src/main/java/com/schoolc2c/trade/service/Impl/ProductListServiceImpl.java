@@ -3,8 +3,10 @@ package com.schoolc2c.trade.service.Impl;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.schoolc2c.bean.Pages;
 import com.schoolc2c.bean.ProductInfo;
+import com.schoolc2c.bean.ProductWanted;
 import com.schoolc2c.service.ProductListService;
 import com.schoolc2c.trade.mapper.ProductInfoMapper;
+import com.schoolc2c.trade.mapper.ProductWantedMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -14,6 +16,9 @@ public class ProductListServiceImpl implements ProductListService {
 
     @Autowired
     ProductInfoMapper productInfoMapper;
+
+    @Autowired
+    ProductWantedMapper productWantedMapper;
 
     @Override
     public Pages getProductList(String catalog3Id, int pageNum, int pageSize) {
@@ -44,5 +49,15 @@ public class ProductListServiceImpl implements ProductListService {
 
         List<ProductInfo> productInfoList = productInfoMapper.select(productInfo);
         return productInfoList;
+    }
+
+    @Override
+    public List<ProductWanted> getProductWantedByUser(String id) {
+
+        ProductWanted productWanted = new ProductWanted();
+        productWanted.setUserId(id);
+
+
+        return productWantedMapper.select(productWanted);
     }
 }

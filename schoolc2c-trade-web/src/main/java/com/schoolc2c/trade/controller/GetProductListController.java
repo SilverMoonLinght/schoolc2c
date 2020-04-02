@@ -5,6 +5,7 @@ import com.alibaba.dubbo.config.annotation.Reference;
 import com.schoolc2c.annotations.LoginRequired;
 import com.schoolc2c.bean.Pages;
 import com.schoolc2c.bean.ProductInfo;
+import com.schoolc2c.bean.ProductWanted;
 import com.schoolc2c.service.ProductListService;
 import com.schoolc2c.util.JwtUtil;
 import org.springframework.stereotype.Controller;
@@ -41,6 +42,19 @@ public class GetProductListController {
         List<ProductInfo> productInfoList = productListService.getProductListByUser(id);
 
         return productInfoList;
+    }
+
+
+    @RequestMapping("getProductWantedByUser")
+    @ResponseBody
+    @LoginRequired
+    public List<ProductWanted> getProductWantedByUser(HttpServletRequest request){
+
+        String token = request.getHeader("token");
+        Map<String,Object> map = JwtUtil.decode(token,"2016051146");
+        String id = map.get("id").toString();
+
+        return productListService.getProductWantedByUser(id);
     }
 
 }
