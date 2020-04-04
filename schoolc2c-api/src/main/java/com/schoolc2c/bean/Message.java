@@ -25,7 +25,7 @@ public class Message implements Serializable {
     private Date date;
 
     @Transient
-    private String username;
+    private String nickname;
 
     @Transient
     private String icon;
@@ -41,12 +41,12 @@ public class Message implements Serializable {
         this.datetime = datetime;
     }
 
-    public String getUsername() {
-        return username;
+    public String getNickname() {
+        return nickname;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
     public String getIcon() {

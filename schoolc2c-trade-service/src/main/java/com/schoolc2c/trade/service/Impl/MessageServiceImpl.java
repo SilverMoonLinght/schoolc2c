@@ -57,7 +57,7 @@ public class MessageServiceImpl implements MessageService {
         List<Message> messageList= messageMapper.select(message);
         for (int i=0;i<messageList.size();i++){
             user = userMapper.selectByPrimaryKey(messageList.get(i).getUid());
-            messageList.get(i).setUsername(user.getUsername());
+            messageList.get(i).setNickname(user.getNickname());
             messageList.get(i).setIcon(user.getIcon());
             messageList.get(i).setDatetime(simpleDateFormat.format(messageList.get(i).getDate()));
         }
