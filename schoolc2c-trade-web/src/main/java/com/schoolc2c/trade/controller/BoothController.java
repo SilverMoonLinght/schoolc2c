@@ -9,6 +9,7 @@ import com.schoolc2c.service.BoothService;
 import com.schoolc2c.util.JwtUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -53,8 +54,40 @@ public class BoothController {
     @RequestMapping("getBoothProductList")
     @ResponseBody
     @LoginRequired
-    public List<BoothProduct>getBoothProductList(String bid){
+    public List<BoothProduct> getBoothProductList(String bid){
         return boothService.getBoothProductList(bid);
+    }
+
+
+    @RequestMapping("addBoothProduct")
+    @ResponseBody
+    @LoginRequired
+    public String addBoothProduct(@RequestBody BoothProduct boothProduct){
+
+
+        String status = boothService.addBoothProduct(boothProduct);
+
+        return status;
+    }
+
+    @RequestMapping("editBoothProduct")
+    @ResponseBody
+    @LoginRequired
+    public String editBoothProduct(@RequestBody BoothProduct boothProduct){
+
+        String status = boothService.editBoothProduct(boothProduct);
+
+        return status;
+    }
+
+    @RequestMapping("deleteBoothProduct")
+    @ResponseBody
+    @LoginRequired
+    public String deleteBoothProduct(@RequestBody BoothProduct boothProduct){
+
+        String status = boothService.deleteBoothProduct(boothProduct);
+
+        return status;
     }
 
 }

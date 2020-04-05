@@ -58,4 +58,39 @@ public class BoothServiceImpl implements BoothService {
         }
         return boothProductList;
     }
+
+    @Override
+    public String addBoothProduct(BoothProduct boothProduct) {
+
+        int flag = boothProductMapper.insert(boothProduct);
+
+        if (flag>0){
+            return "success";
+        }
+
+
+        return "fail";
+    }
+
+    @Override
+    public String editBoothProduct(BoothProduct boothProduct) {
+
+        int flag = boothProductMapper.updateByPrimaryKey(boothProduct);
+        if (flag>0){
+            return "success";
+        }
+
+        return "fail";
+    }
+
+    @Override
+    public String deleteBoothProduct(BoothProduct boothProduct) {
+
+        int flag = boothProductMapper.delete(boothProduct);
+        if (flag>0){
+            return "success";
+        }
+
+        return "fail";
+    }
 }

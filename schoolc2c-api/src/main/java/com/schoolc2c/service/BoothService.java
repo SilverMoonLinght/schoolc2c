@@ -11,4 +11,10 @@ public interface BoothService {
     String createBooth(String uid);
 
     List<BoothProduct> getBoothProductList(String bid);
+
+    String addBoothProduct(BoothProduct boothProduct);
+
+    String editBoothProduct(BoothProduct boothProduct);
+
+    String deleteBoothProduct(BoothProduct boothProduct);
 }
