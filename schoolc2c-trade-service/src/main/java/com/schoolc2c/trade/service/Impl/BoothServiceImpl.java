@@ -3,9 +3,11 @@ package com.schoolc2c.trade.service.Impl;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.schoolc2c.bean.Booth;
 import com.schoolc2c.bean.BoothProduct;
+import com.schoolc2c.bean.User;
 import com.schoolc2c.service.BoothService;
 import com.schoolc2c.trade.mapper.BoothMapper;
 import com.schoolc2c.trade.mapper.BoothProductMapper;
+import com.schoolc2c.trade.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -19,6 +21,9 @@ public class BoothServiceImpl implements BoothService {
 
     @Autowired
     BoothProductMapper boothProductMapper;
+
+    @Autowired
+    UserMapper userMapper;
 
 
     @Override
@@ -92,5 +97,28 @@ public class BoothServiceImpl implements BoothService {
         }
 
         return "fail";
+    }
+
+    @Override
+    public List<Booth> getBoothList(String bid) {
+
+        List<Booth> boothList = boothMapper.selectExceptBid(bid);
+        BoothProduct boothProduct = new BoothProduct();
+        User user = new User();
+
+        for (int i=0;i<boothList.size();i++){
+            boothProduct.setBid(boothList.get(i).getId());
+            boothList.get(i).setBoothProductList(boothProductMapper.select(boothProduct));
+
+            user = userMapper.selectByPrimaryKey(boothList.get(i).getUid());
+            boothList.get(i).setNickname(user.getNickname());
+            boothList.get(i).setPersonalizedSignature(user.getPersonalizedSignature());
+            boothList.get(i).setPhone(user.getPhone());
+            boothList.get(i).setIcon(user.getIcon());
+        }
+
+
+
+        return boothList;
     }
 }

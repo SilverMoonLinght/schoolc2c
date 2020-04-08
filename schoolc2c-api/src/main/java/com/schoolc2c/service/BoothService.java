@@ -17,4 +17,6 @@ public interface BoothService {
     String editBoothProduct(BoothProduct boothProduct);
 
     String deleteBoothProduct(BoothProduct boothProduct);
+
+    List<Booth> getBoothList(String bid);
 }

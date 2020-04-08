@@ -90,4 +90,12 @@ public class BoothController {
         return status;
     }
 
+    @RequestMapping("getBoothList")
+    @ResponseBody
+    @LoginRequired
+    public List<Booth> getBoothList(String bid){
+
+        return boothService.getBoothList(bid);
+    }
+
 }
