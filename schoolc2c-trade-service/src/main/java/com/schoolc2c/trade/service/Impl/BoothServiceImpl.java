@@ -10,6 +10,7 @@ import com.schoolc2c.trade.mapper.BoothProductMapper;
 import com.schoolc2c.trade.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -102,9 +103,17 @@ public class BoothServiceImpl implements BoothService {
     @Override
     public List<Booth> getBoothList(String bid) {
 
-        List<Booth> boothList = boothMapper.selectExceptBid(bid);
+
+        List<Booth> boothList =new ArrayList<>();
+        if (bid==null){
+            boothList = boothMapper.selectAll();
+        }else {
+            boothList = boothMapper.selectExceptBid(bid);
+        }
+
         BoothProduct boothProduct = new BoothProduct();
         User user = new User();
+
 
         for (int i=0;i<boothList.size();i++){
             boothProduct.setBid(boothList.get(i).getId());

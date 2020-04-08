@@ -3,6 +3,7 @@ package com.schoolc2c.trade.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.schoolc2c.annotations.LoginRequired;
+import com.schoolc2c.annotations.PassToken;
 import com.schoolc2c.bean.Booth;
 import com.schoolc2c.bean.BoothProduct;
 import com.schoolc2c.service.BoothService;
@@ -92,7 +93,7 @@ public class BoothController {
 
     @RequestMapping("getBoothList")
     @ResponseBody
-    @LoginRequired
+    @PassToken
     public List<Booth> getBoothList(String bid){
 
         return boothService.getBoothList(bid);
