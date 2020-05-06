@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.schoolc2c.trade.mapper.AuctionRecordMapper">
+    <select id="selectAuctionRecordOrderByAid" resultType="com.schoolc2c.bean.AuctionRecord" parameterType="String">
+        select * from auction_record where aid = #{aid} order by time
+    </select>
+
+    <select id="selectMaxPriceByAid" resultType="String" parameterType="String">
+        select max(price) from auction_record where aid = #{aid}
+    </select>
+</mapper>

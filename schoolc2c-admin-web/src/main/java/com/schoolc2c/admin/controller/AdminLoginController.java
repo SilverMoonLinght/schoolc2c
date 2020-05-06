@@ -33,9 +33,4 @@ public class AdminLoginController {
     }
 
 
-    @RequestMapping("111")
-    @ResponseBody
-    public String interceptorTest(){
-        return "111";
-    }
 }

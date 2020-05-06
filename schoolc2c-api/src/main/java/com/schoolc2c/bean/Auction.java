@@ -1,9 +1,6 @@
 package com.schoolc2c.bean;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -46,6 +43,28 @@ public class Auction implements Serializable {
 
     @Column
     private Date endtime;
+
+    @Transient
+    private String startdate;
+
+    @Transient
+    private String enddate;
+
+    public String getStartdate() {
+        return startdate;
+    }
+
+    public void setStartdate(String startdate) {
+        this.startdate = startdate;
+    }
+
+    public String getEnddate() {
+        return enddate;
+    }
+
+    public void setEnddate(String enddate) {
+        this.enddate = enddate;
+    }
 
     public String getId() {
         return id;
