@@ -3,6 +3,7 @@ package com.schoolc2c.trade.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.schoolc2c.annotations.LoginRequired;
+import com.schoolc2c.annotations.PassToken;
 import com.schoolc2c.bean.Pages;
 import com.schoolc2c.bean.ProductInfo;
 import com.schoolc2c.bean.ProductWanted;
@@ -55,6 +56,14 @@ public class GetProductListController {
         String id = map.get("id").toString();
 
         return productListService.getProductWantedByUser(id);
+    }
+
+
+    @RequestMapping("getHotProduct")
+    @ResponseBody
+    @PassToken
+    public List<ProductInfo> getHotProduct(){
+        return productListService.getHotProduct();
     }
 
 }

@@ -10,4 +10,10 @@
     <select id="selectPartPageProductInfo" resultType="com.schoolc2c.bean.ProductInfo">
         select * from product_info where catalog3_id = #{catalog3Id} limit #{startNum},#{pageSize}
     </select>
+
+    <select id="selectByHotProductId" resultType="com.schoolc2c.bean.ProductInfo">
+        select * from product_info where id in <foreach collection="list" item="item" index="index" separator="," open="(" close=")">
+        #{item.pid}
+    </foreach>
+    </select>
 </mapper>

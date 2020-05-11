@@ -19,4 +19,7 @@ public interface BoothService {
     String deleteBoothProduct(BoothProduct boothProduct);
 
     List<Booth> getBoothList(String bid);
+
+
+    String removeBooth(Booth booth);
 }

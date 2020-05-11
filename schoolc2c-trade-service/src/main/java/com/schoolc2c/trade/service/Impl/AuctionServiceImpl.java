@@ -91,7 +91,7 @@ public class AuctionServiceImpl implements AuctionService {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         for (int i=0;i<auctionRecords.size();i++){
             auctionRecords.get(i).setDatetime(simpleDateFormat.format(auctionRecords.get(i).getTime()));
-            auctionRecords.get(i).setUsername(userMapper.selectByPrimaryKey(auctionRecords.get(i).getUid()).getUsername());
+            auctionRecords.get(i).setNickename(userMapper.selectByPrimaryKey(auctionRecords.get(i).getUid()).getNickname());
         }
 
         return auctionRecords;

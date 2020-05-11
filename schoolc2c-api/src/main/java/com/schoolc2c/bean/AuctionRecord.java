@@ -28,14 +28,14 @@ public class AuctionRecord implements Serializable {
     String datetime;
 
     @Transient
-    String username;
+    String nickename;
 
-    public String getUsername() {
-        return username;
+    public String getNickename() {
+        return nickename;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setNickename(String nickename) {
+        this.nickename = nickename;
     }
 
     public String getId() {
