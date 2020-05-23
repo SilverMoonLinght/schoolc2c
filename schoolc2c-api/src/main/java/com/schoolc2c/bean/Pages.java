@@ -10,6 +10,15 @@ public class Pages implements Serializable {
     private List<ProductInfo> productInfoList;
     private List<ProductWanted> productWanteds;
     private List<Auction> auctions;
+    private List<ProductSearchInfo> productSearchInfos;
+
+    public List<ProductSearchInfo> getProductSearchInfos() {
+        return productSearchInfos;
+    }
+
+    public void setProductSearchInfos(List<ProductSearchInfo> productSearchInfos) {
+        this.productSearchInfos = productSearchInfos;
+    }
 
     public List<Auction> getAuctions() {
         return auctions;

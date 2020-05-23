@@ -14,4 +14,6 @@ public interface ProductListService {
     List<ProductWanted> getProductWantedByUser(String id);
 
     List<ProductInfo> getHotProduct();
+
+    List<ProductInfo> getAllProduct();
 }

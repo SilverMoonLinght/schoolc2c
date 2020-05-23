@@ -84,5 +84,10 @@ public class ProductListServiceImpl implements ProductListService {
         return productInfoList;
     }
 
+    @Override
+    public List<ProductInfo> getAllProduct() {
+        return productInfoMapper.selectAll();
+    }
+
 
 }
