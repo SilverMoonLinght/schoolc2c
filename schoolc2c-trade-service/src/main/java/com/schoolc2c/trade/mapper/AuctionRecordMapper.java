@@ -9,4 +9,6 @@ public interface AuctionRecordMapper extends Mapper<AuctionRecord> {
     List<AuctionRecord> selectAuctionRecordOrderByAid(String aid);
 
     String selectMaxPriceByAid(String aid);
+
+    List<String> selectAuctionRecordByUser(String id);
 }

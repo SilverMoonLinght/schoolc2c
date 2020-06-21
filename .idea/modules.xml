@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/schoolc2c-admin-service/schoolc2c-admin-service.iml" filepath="$PROJECT_DIR$/schoolc2c-admin-service/schoolc2c-admin-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/schoolc2c-admin-web/schoolc2c-admin-web.iml" filepath="$PROJECT_DIR$/schoolc2c-admin-web/schoolc2c-admin-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/schoolc2c-api/schoolc2c-api.iml" filepath="$PROJECT_DIR$/schoolc2c-api/schoolc2c-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/schoolc2c-auto/schoolc2c-auto.iml" filepath="$PROJECT_DIR$/schoolc2c-auto/schoolc2c-auto.iml" />
       <module fileurl="file://$PROJECT_DIR$/schoolc2c-common-util/schoolc2c-common-util.iml" filepath="$PROJECT_DIR$/schoolc2c-common-util/schoolc2c-common-util.iml" />
       <module fileurl="file://$PROJECT_DIR$/schoolc2c-parent/schoolc2c-parent.iml" filepath="$PROJECT_DIR$/schoolc2c-parent/schoolc2c-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/schoolc2c-passport-web/schoolc2c-passport-web.iml" filepath="$PROJECT_DIR$/schoolc2c-passport-web/schoolc2c-passport-web.iml" />

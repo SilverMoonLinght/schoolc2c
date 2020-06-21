@@ -2,10 +2,8 @@ package com.schoolc2c.interceptors;
 
 import com.schoolc2c.annotations.LoginRequired;
 import com.schoolc2c.annotations.PassToken;
-import com.schoolc2c.util.CookieUtil;
 import com.schoolc2c.util.HttpclientUtil;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.http.client.HttpClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;

@@ -38,6 +38,9 @@ public class ProductInfo implements Serializable {
     @Column
     String qq;
 
+    @Transient
+    String school;
+
     public String getWechat() {
         return wechat;
     }
@@ -118,5 +121,13 @@ public class ProductInfo implements Serializable {
 
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
+    }
+
+    public String getSchool() {
+        return school;
+    }
+
+    public void setSchool(String school) {
+        this.school = school;
     }
 }

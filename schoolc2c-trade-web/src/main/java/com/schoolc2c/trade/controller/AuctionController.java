@@ -82,4 +82,40 @@ public class AuctionController {
     public String getMaxPrice(String aid){
         return auctionService.getMaxPrice(aid);
     }
+
+    @RequestMapping("getAuctionByUser")
+    @ResponseBody
+    @LoginRequired
+    public List<Auction> getAuctionByUser(HttpServletRequest request){
+        String token = request.getHeader("token");
+        Map<String,Object> map = JwtUtil.decode(token,"2016051146");
+        String id = map.get("id").toString();
+
+        return auctionService.getAuctionByUser(id);
+    }
+
+    @RequestMapping("editAuction")
+    @ResponseBody
+    @LoginRequired
+    public String editAuction(@RequestBody Auction auction){
+        return auctionService.editAuction(auction);
+    }
+
+    @RequestMapping("removeAuction")
+    @ResponseBody
+    @LoginRequired
+    public  String removeAuction(@RequestBody Auction auction){
+        return auctionService.removeAuction(auction);
+    }
+
+    @RequestMapping("getAuctionRecordByUser")
+    @ResponseBody
+    @LoginRequired
+    public List<Auction> getAuctionRecordByUser(HttpServletRequest request){
+        String token = request.getHeader("token");
+        Map<String,Object> map = JwtUtil.decode(token,"2016051146");
+        String id = map.get("id").toString();
+
+        return auctionService.getAuctionRecordByUser(id);
+    }
 }

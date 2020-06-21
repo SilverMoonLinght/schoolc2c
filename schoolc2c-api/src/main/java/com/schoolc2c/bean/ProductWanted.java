@@ -21,9 +21,6 @@ public class ProductWanted implements Serializable {
     private String description;
 
     @Column
-    private String price;
-
-    @Column
     private String wechat;
 
     @Column
@@ -40,6 +37,9 @@ public class ProductWanted implements Serializable {
 
     @Transient
     private String icon;
+
+    @Transient
+    private String school;
 
     public String getId() {
         return id;
@@ -71,14 +71,6 @@ public class ProductWanted implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getPrice() {
-        return price;
-    }
-
-    public void setPrice(String price) {
-        this.price = price;
     }
 
     public String getWechat() {
@@ -127,5 +119,13 @@ public class ProductWanted implements Serializable {
 
     public void setIcon(String icon) {
         this.icon = icon;
+    }
+
+    public String getSchool() {
+        return school;
+    }
+
+    public void setSchool(String school) {
+        this.school = school;
     }
 }

@@ -18,4 +18,12 @@ public interface AuctionService {
     List<AuctionRecord> getAuctionRecord(String aid);
 
     String getMaxPrice(String aid);
+
+    List<Auction> getAuctionByUser(String id);
+
+    String editAuction(Auction auction);
+
+    String removeAuction(Auction auction);
+
+    List<Auction> getAuctionRecordByUser(String id);
 }

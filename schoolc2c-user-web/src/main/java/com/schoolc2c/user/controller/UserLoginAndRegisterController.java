@@ -35,6 +35,10 @@ public class UserLoginAndRegisterController {
 
         User user1 = userLoginAndRegisterService.userLogin(user);
 
+        if (user1.getStatus().equals("0")){
+            return "ban";
+        }
+
         if (user1 != null){
             String id = user1.getId();
 

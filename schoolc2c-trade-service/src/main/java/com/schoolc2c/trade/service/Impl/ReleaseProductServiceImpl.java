@@ -68,6 +68,7 @@ public class ReleaseProductServiceImpl implements ReleaseProductService {
             if (user!=null){
                 pages.getProductWanteds().get(i).setUsername(user.getUsername());
                 pages.getProductWanteds().get(i).setIcon(user.getIcon());
+                pages.getProductWanteds().get(i).setSchool(user.getSchool());
             }
         }
         pages.setPageNum(pageNum);

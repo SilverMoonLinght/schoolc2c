@@ -77,10 +77,9 @@ public class ProductListServiceImpl implements ProductListService {
     @Override
     public List<ProductInfo> getHotProduct() {
 
-        List<HotProduct> hotProducts = messageMapper.selectHotProductList();
+        List<HotProduct> hotProducts = hotProductMapper.selectAll();
         List<ProductInfo> productInfoList = productInfoMapper.selectByHotProductId(hotProducts);
-        hotProductMapper.deleteAll();
-        hotProductMapper.insertHotProducts(hotProducts);
+
         return productInfoList;
     }
 

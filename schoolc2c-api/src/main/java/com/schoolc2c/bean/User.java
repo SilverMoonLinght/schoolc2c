@@ -20,7 +20,7 @@ public class User implements Serializable {
     private String icon;
     private String gender;
     private String personalizedSignature;
-    private String sourceType;
+    private String school;
 
 
 
@@ -99,13 +99,11 @@ public class User implements Serializable {
         this.personalizedSignature = personalizedSignature;
     }
 
-    public String getSourceType() {
-        return sourceType;
+    public String getSchool() {
+        return school;
     }
 
-    public void setSourceType(String sourceType) {
-        this.sourceType = sourceType;
+    public void setSchool(String school) {
+        this.school = school;
     }
-
-
 }

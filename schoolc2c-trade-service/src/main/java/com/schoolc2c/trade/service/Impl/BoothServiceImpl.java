@@ -137,10 +137,23 @@ public class BoothServiceImpl implements BoothService {
         BoothProduct boothProduct = new BoothProduct();
         boothProduct.setBid(booth.getId());
 
-        int flag = boothProductMapper.delete(boothProduct);
+        boothProductMapper.delete(boothProduct);
+        int flag = boothMapper.delete(booth);
         if (flag>0){
-           flag = boothMapper.delete(booth);
+            return "success";
         }
+
+        return "fail";
+    }
+
+    @Override
+    public String clearBoothProduct(String bid) {
+
+        BoothProduct boothProduct = new BoothProduct();
+        boothProduct.setBid(bid);
+
+        int flag = boothProductMapper.delete(boothProduct);
+
         if (flag>0){
             return "success";
         }

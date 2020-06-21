@@ -3,6 +3,7 @@ package com.schoolc2c.trade.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.schoolc2c.annotations.LoginRequired;
+import com.schoolc2c.annotations.PassToken;
 import com.schoolc2c.bean.Message;
 import com.schoolc2c.service.MessageService;
 import com.schoolc2c.util.JwtUtil;
@@ -42,7 +43,7 @@ public class MessageController {
 
     @RequestMapping("getMessageByPid")
     @ResponseBody
-    @LoginRequired
+    @PassToken
     public List<Message> getMessageByPid(String id){
 
         return messageService.getMessage(id);

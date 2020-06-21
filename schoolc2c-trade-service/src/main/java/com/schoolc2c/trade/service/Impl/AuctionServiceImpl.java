@@ -26,6 +26,7 @@ public class AuctionServiceImpl implements AuctionService {
     AuctionRecordMapper auctionRecordMapper;
     @Autowired
     UserMapper userMapper;
+    private int flag;
 
 
     @Override
@@ -48,6 +49,8 @@ public class AuctionServiceImpl implements AuctionService {
             pages.setAuctions(auctionMapper.selectPageAuction(startNum,pageSize));
             List<Auction> auctionList = auctionMapper.selectAll();
             pages.setTotalPageNum(auctionList.size());
+        }else {
+            pages.setAuctions(auctionMapper.selectPartPageAuction(catalog3Id,startNum,pageSize));
         }
 
         return pages;
@@ -62,6 +65,7 @@ public class AuctionServiceImpl implements AuctionService {
 
         auction.setStartdate(simpleDateFormat.format(auction.getStarttime()));
         auction.setEnddate(simpleDateFormat.format(auction.getEndtime()));
+        auction.setSchool(userMapper.selectByPrimaryKey(auction.getUserId()).getSchool());
 
         return auction;
     }
@@ -91,7 +95,7 @@ public class AuctionServiceImpl implements AuctionService {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         for (int i=0;i<auctionRecords.size();i++){
             auctionRecords.get(i).setDatetime(simpleDateFormat.format(auctionRecords.get(i).getTime()));
-            auctionRecords.get(i).setNickename(userMapper.selectByPrimaryKey(auctionRecords.get(i).getUid()).getNickname());
+            auctionRecords.get(i).setNickname(userMapper.selectByPrimaryKey(auctionRecords.get(i).getUid()).getNickname());
         }
 
         return auctionRecords;
@@ -100,5 +104,59 @@ public class AuctionServiceImpl implements AuctionService {
     @Override
     public String getMaxPrice(String aid) {
         return auctionRecordMapper.selectMaxPriceByAid(aid);
+    }
+
+    @Override
+    public List<Auction> getAuctionByUser(String id) {
+
+        Auction auction = new Auction();
+
+        auction.setUserId(id);
+
+        return auctionMapper.select(auction);
+    }
+
+    @Override
+    public String editAuction(Auction auction) {
+
+        flag = auctionMapper.updateByPrimaryKey(auction);
+
+        if (flag>0){
+            return "success";
+        }
+        return "fail";
+    }
+
+    @Override
+    public String removeAuction(Auction auction) {
+
+        AuctionRecord auctionRecord = new AuctionRecord();
+        auctionRecord.setAid(auction.getId());
+        flag =auctionMapper.delete(auction);
+
+        if (flag>0){
+            flag = auctionRecordMapper.delete(auctionRecord);
+        }
+
+        if (flag>=0){
+            return "success";
+        }
+
+        return "fail";
+    }
+
+    @Override
+    public List<Auction> getAuctionRecordByUser(String id) {
+
+
+        List<String> ids = auctionRecordMapper.selectAuctionRecordByUser(id);
+        List<Auction> auctionList = auctionMapper.selectAuctionByListId(ids);
+
+        SimpleDateFormat simpleDateFormat =new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        for (int i = 0;i<auctionList.size();i++){
+            auctionList.get(i).setEnddate(simpleDateFormat.format(auctionList.get(i).getEndtime()));
+        }
+
+        return auctionList;
     }
 }

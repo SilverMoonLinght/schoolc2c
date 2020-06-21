@@ -99,4 +99,11 @@ public class BoothController {
         return boothService.getBoothList(bid);
     }
 
+    @RequestMapping("clearBoothProduct")
+    @ResponseBody
+    @LoginRequired
+    public String clearBoothProduct(String bid){
+        return boothService.clearBoothProduct(bid);
+    }
+
 }

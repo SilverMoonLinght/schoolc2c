@@ -22,4 +22,6 @@ public interface BoothService {
 
 
     String removeBooth(Booth booth);
+
+    String clearBoothProduct(String bid);
 }

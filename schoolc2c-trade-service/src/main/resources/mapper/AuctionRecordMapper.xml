@@ -10,4 +10,10 @@
     <select id="selectMaxPriceByAid" resultType="String" parameterType="String">
         select max(price) from auction_record where aid = #{aid}
     </select>
+
+    <select id="selectAuctionRecordByUser" resultType="String" parameterType="String">
+        SELECT aid  FROM auction_record
+        WHERE uid = #{id}
+        GROUP BY aid
+    </select>
 </mapper>

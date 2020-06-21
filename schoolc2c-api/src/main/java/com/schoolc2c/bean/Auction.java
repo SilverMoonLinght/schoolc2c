@@ -27,10 +27,10 @@ public class Auction implements Serializable {
     private String wechat;
 
     @Column
-    private String qq;
+    private String phone;
 
     @Column
-    private String phone;
+    private String qq;
 
     @Column
     private  String catalog3Id;
@@ -49,6 +49,17 @@ public class Auction implements Serializable {
 
     @Transient
     private String enddate;
+
+    @Transient
+    private String school;
+
+    public String getSchool() {
+        return school;
+    }
+
+    public void setSchool(String school) {
+        this.school = school;
+    }
 
     public String getStartdate() {
         return startdate;

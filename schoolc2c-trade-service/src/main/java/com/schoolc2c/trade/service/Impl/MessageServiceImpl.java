@@ -7,6 +7,7 @@ import com.schoolc2c.service.MessageService;
 import com.schoolc2c.trade.mapper.MessageMapper;
 import com.schoolc2c.trade.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -52,6 +53,8 @@ public class MessageServiceImpl implements MessageService {
         Message message =new Message();
         message.setPid(id);
 
+
+        //格式化时间戳形式
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
         List<Message> messageList= messageMapper.select(message);
@@ -59,6 +62,7 @@ public class MessageServiceImpl implements MessageService {
             user = userMapper.selectByPrimaryKey(messageList.get(i).getUid());
             messageList.get(i).setNickname(user.getNickname());
             messageList.get(i).setIcon(user.getIcon());
+            //将时间戳转换为String形式
             messageList.get(i).setDatetime(simpleDateFormat.format(messageList.get(i).getDate()));
         }
 
